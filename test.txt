@@ -1,0 +1,27 @@
+dfx deploy loka --argument '(record{admin = principal "2zosz-ithna-3dqa4-crx3i-2gy7e-o3rkp-fa6wk-mczsu-3h7bi-poiym-hae"})' --network ic
+
+dfx deploy nft --argument '(principal "2zosz-ithna-3dqa4-crx3i-2gy7e-o3rkp-fa6wk-mczsu-3h7bi-poiym-hae")' --network ic
+
+
+
+
+dfx deploy controller --argument '(record{admin = principal "2zosz-ithna-3dqa4-crx3i-2gy7e-o3rkp-fa6wk-mczsu-3h7bi-poiym-hae";hashrate=0.035; electricity = 0.035; miningSiteIdparam = 1 ; siteName = "jakarta-1"; totalHashrate =4000.0 ;})' --network ic
+
+
+dfx canister call (nft name) setMinter '(principal "7wncc-gaaaa-aaaam-ab2hq-cai")' --network ic
+
+dfx canister call lbtc icrc1_transfer "(record { to = record { owner = principal \"7wncc-gaaaa-aaaam-ab2hq-cai\";};  amount = 10_000_000_000;})" --network ic
+
+dfx canister call lom icrc1_transfer "(record { to = record { owner = principal \"7wncc-gaaaa-aaaam-ab2hq-cai\";};  amount = 10_000_000_000;})" --network ic
+
+dfx canister call stable icrc1_transfer "(record { to = record { owner = principal \"7wncc-gaaaa-aaaam-ab2hq-cai\";};  amount = 10_000_000_000;})" --network ic
+
+dfx canister call stable icrc1_transfer "(record { to = record { owner = principal \"2owmv-l5l75-jnqxi-dwdp5-focof-pxnn6-hnu6r-62tld-j65en-qcy5g-pae\";};  amount = 10_000_000_000;})" --network ic
+
+dfx deploy miner --argument '(record{admin = principal "2zosz-ithna-3dqa4-crx3i-2gy7e-o3rkp-fa6wk-mczsu-3h7bi-poiym-hae"})' --network ic
+
+
+dfx canister call loka addMiningSite '("Jakarta", "jakarta-1", 0.035,0.035,4000,"7rmew-lyaaa-aaaam-ab2ha-cai", "7wncc-gaaaa-aaaam-ab2hq-cai")' --network ic
+
+
+dfx canister call icrc1_ledger_canister icrc2_approve "(record { amount = 100_000; spender = record{owner = principal \"sckqo-e2vyl-4rqqu-5g4wf-pqskh-iynjm-46ixm-awluw-ucnqa-4sl6j-mqe\";} })"  

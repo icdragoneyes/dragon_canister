@@ -1,0 +1,48 @@
+{
+  "canisters": {
+  
+    "icdragon": {
+      "main": "src/icdragon/main.mo",
+      "type": "motoko",
+      "dependencies":["icp_ledger_canister","eyes"]
+    },
+    "test": {
+      "main": "src/icdragon/test.mo",
+      "type": "motoko"
+    },
+    "icp_ledger_canister": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/d430f7ad0c6384921801a54b37b9f3c55a360c51/rs/rosetta-api/icrc1/ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/d430f7ad0c6384921801a54b37b9f3c55a360c51/canisters/ic-icrc1-ledger.wasm.gz",
+      "remote": {
+        "candid": "icrc1.public.did",
+        "id": {
+          "ic": "ryjl3-tyaaa-aaaaa-aaaba-cai"
+        }
+      }
+    },
+    "eyes": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/d430f7ad0c6384921801a54b37b9f3c55a360c51/rs/rosetta-api/icrc1/ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/d430f7ad0c6384921801a54b37b9f3c55a360c51/canisters/ic-icrc1-ledger.wasm.gz"
+    },
+    "tempeeyes": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/d430f7ad0c6384921801a54b37b9f3c55a360c51/rs/rosetta-api/icrc1/ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/d430f7ad0c6384921801a54b37b9f3c55a360c51/canisters/ic-icrc1-ledger.wasm.gz"
+    },
+    "icp_test": {
+      "type": "custom",
+      "candid": "https://raw.githubusercontent.com/dfinity/ic/d430f7ad0c6384921801a54b37b9f3c55a360c51/rs/rosetta-api/icrc1/ledger/ledger.did",
+      "wasm": "https://download.dfinity.systems/ic/d430f7ad0c6384921801a54b37b9f3c55a360c51/canisters/ic-icrc1-ledger.wasm.gz"
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "192.168.1.7:8000",
+      "type": "ephemeral"
+    }
+  },
+  
+  "version": 1
+}
